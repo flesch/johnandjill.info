@@ -1,0 +1,14 @@
+# PHP values like "auto_prepend_file" cannot be set in .htaccess on Site5,
+# but using a custom php.ini file will work.
+# php_value auto_prepend_file /home/johnfles/public_html/assets/php/gzip-prepend.php
+# php_value auto_append_file /home/johnfles/public_html/assets/php/gzip-append.php
+# See /home/johnfles/public_html/php.ini
+
+# Force all files to run as PHP5, which allow us to server gzipped versions
+#AddHandler application/x-httpd-php5 .php .js .css .htm .html .txt
+
+# Don't allow directory indexing
+Options All -Indexes
+
+# Redirect 404 Not Found errors to the home page
+ErrorDocument 404 /
